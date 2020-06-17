@@ -1,0 +1,25 @@
+/* @import '~rsuite/styles/less/index'; */
+@import '~rsuite/dist/styles/rsuite-default.css';
+@import '~chartist/dist/chartist.css';
+
+@import '../components/Frame/styles.css';
+@import '../components/Avatar/styles.css';
+
+@import '../pages/list/members/styles.css';
+@import '../pages/dashboard/styles.css';
+
+body {
+  background: #f7f7fa;
+}
+.rs-sidebar {
+  position: fixed;
+  height: 100vh;
+  z-index: 3;
+}
+.page-container {
+  padding-left: 260px;
+  transition: padding 0.5s;
+}
+.page-container.container-full {
+  padding-left: 60px;
+}

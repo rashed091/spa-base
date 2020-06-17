@@ -1,0 +1,17 @@
+.table-toolbar {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px 4px 0 0;
+}
+.table-toolbar .inner-left {
+  float: left;
+}
+.table-toolbar .inner-right {
+  float: right;
+}
+.rs-drawer-footer {
+  text-align: left;
+}
+.rs-table {
+  background: #fff;
+}

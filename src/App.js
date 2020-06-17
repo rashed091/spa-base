@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { createBrowserHistory } from "history";
+import { IntlProvider } from 'react-intl';
+import { IntlProvider as RSIntlProvider } from 'rsuite';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import enGB from 'rsuite/lib/IntlProvider/locales/en_GB';
+import locales from './locales';
+import Routes from './pages';
+
+const history = createBrowserHistory();
+
+class App extends React.PureComponent {
+  render() {
+    return (
+      <IntlProvider locale="en" messages={locales.en}>
+        <RSIntlProvider locale={enGB}>
+          <Router history={history}>
+            <Routes />
+          </Router>
+        </RSIntlProvider>
+      </IntlProvider>
+    );
+  }
 }
 
 export default App;

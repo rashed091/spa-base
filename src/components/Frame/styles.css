@@ -1,0 +1,33 @@
+.frame {
+  height: 100vh;
+}
+.frame .header-hrand {
+  padding: 18px;
+  font-size: 16px;
+  height: 56px;
+  background: #34c3ff;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.frame .header-hrand a {
+  color: #fff;
+  text-decoration: none;
+}
+.frame .rs-sidebar {
+  box-shadow: none;
+}
+.frame .rs-sidenav {
+  flex: 1 1 auto;
+  transition: none !important;
+  border-top: 1px solid red;
+  width: 100%;
+}
+.frame .rs-content {
+  padding: 20px;
+}
+.frame .nav-toggle {
+  border-top: 1px solid #eee;
+}
+.frame .nav-item-active {
+  color: white !important;
+}
