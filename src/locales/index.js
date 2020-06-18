@@ -1,14 +1,14 @@
 import en from './en-US';
-import zh from './zh-CN';
+import bn from './bn-BD';
 
 export function getDict(locale) {
   if (locale === 'en') {
     return en;
   }
-  return zh;
+  return bn;
 }
 
 export default {
   en: en,
-  zh: zh
+  zh: bn
 };
