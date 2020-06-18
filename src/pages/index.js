@@ -1,9 +1,7 @@
-import React from 'react';
+import React from "react";
 import { Route } from "react-router-dom";
-import HomePage from './home';
+import LoginPage from "./login";
 
 export default function Routes() {
-  return (
-    <Route exact path="/" component={HomePage}/>
-  );
+  return <Route exact path="/" component={LoginPage} />;
 }
