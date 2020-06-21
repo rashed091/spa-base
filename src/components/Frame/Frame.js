@@ -1,8 +1,8 @@
 // @flow
 
-import * as React from 'react';
-import classNames from 'classnames';
-import { Link } from 'react-router';
+import * as React from "react";
+import classNames from "classnames";
+import { Link } from "react-router-dom";
 import {
   Container,
   Sidebar,
@@ -11,48 +11,41 @@ import {
   Content,
   Dropdown,
   Nav,
-  DOMHelper
-} from 'rsuite';
+  DOMHelper,
+} from "rsuite";
 
-import NavToggle from './NavToggle';
-import HeaderAvatar from '../Avatar';
+import NavToggle from "./NavToggle";
+import HeaderAvatar from "../Avatar";
 
 const { getHeight, on } = DOMHelper;
 const navs = [
   {
-    key: '1',
-    icon: <Icon icon="home" />,
-    text: 'Home',
-    link: '/'
-  },
-  {
-    key: '2',
+    key: "1",
     icon: <Icon icon="dashboard" />,
-    text: 'Dashboard',
-    link: '/dashboard'
+    text: "Dashboard",
+    link: "/dashboard",
   },
   {
-    key: '3',
+    key: "2",
     icon: <Icon icon="group" />,
-    text: 'Members',
-    link: '/list/members'
+    text: "Members",
+    link: "/list/members",
   },
 ];
-
 
 class Frame extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       windowHeight: getHeight(window),
-      expand: true
+      expand: true,
     };
-    this.resizeListenner = on(window, 'resize', this.updateHeight);
+    this.resizeListenner = on(window, "resize", this.updateHeight);
   }
 
-  componentDidMount() {
-    this.context.router.listen();
-  }
+  // componentDidMount() {
+  //   this.context.router.listen();
+  // }
 
   componentWillUnmount() {
     if (this.resizeListenner) {
@@ -62,18 +55,18 @@ class Frame extends React.Component {
 
   updateHeight = () => {
     this.setState({
-      windowHeight: getHeight(window)
+      windowHeight: getHeight(window),
     });
   };
 
   handleToggle = () => {
     this.setState({
-      expand: !this.state.expand
+      expand: !this.state.expand,
     });
   };
 
   renderNavs() {
-    return navs.map(item => {
+    return navs.map((item) => {
       if (item.children) {
         return (
           <Dropdown
@@ -84,7 +77,7 @@ class Frame extends React.Component {
             title="Errors"
             icon={item.icon}
           >
-            {item.children.map(child => {
+            {item.children.map((child) => {
               return (
                 <Dropdown.Item
                   key={child.key}
@@ -120,34 +113,43 @@ class Frame extends React.Component {
     const { children } = this.props;
     const { expand, windowHeight } = this.state;
 
-    const containerClasses = classNames('page-container', {
-      'container-full': !expand
+    const containerClasses = classNames("page-container", {
+      "container-full": !expand,
     });
 
     let navBodyStyle = null;
     if (expand) {
       navBodyStyle = {
         height: windowHeight - 112,
-        overflow: 'auto'
+        overflow: "auto",
       };
     }
 
     return (
       <Container className="frame">
         <Sidebar
-          style={{ display: 'flex', flexDirection: 'column' }}
+          style={{ display: "flex", flexDirection: "column" }}
           width={expand ? 260 : 56}
           collapsible
         >
           <Sidenav.Header>
             <div className="header-hrand">
-              <Link to="/">
-                <Icon icon="logo-analytics" size="lg" style={{ verticalAlign: 0 }} />
+              <Link to="/login">
+                <Icon
+                  icon="logo-analytics"
+                  size="lg"
+                  style={{ verticalAlign: 0 }}
+                />
                 <span style={{ marginLeft: 12 }}> RSUITE ANALYTICS</span>
               </Link>
             </div>
           </Sidenav.Header>
-          <Sidenav expanded={expand} defaultOpenKeys={['3']} activeKey={[]} appearance="subtle">
+          <Sidenav
+            expanded={expand}
+            defaultOpenKeys={["3"]}
+            activeKey={[]}
+            appearance="subtle"
+          >
             <Sidenav.Body style={navBodyStyle}>
               <Nav>
                 {this.renderNavs()}
@@ -161,7 +163,7 @@ class Frame extends React.Component {
               </Nav>
             </Sidenav.Body>
           </Sidenav>
-          <NavToggle expand={expand} onChange={this.handleToggle} />
+          {/* <NavToggle expand={expand} onChange={this.handleToggle} /> */}
         </Sidebar>
 
         <Container className={containerClasses}>

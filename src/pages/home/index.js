@@ -1,8 +1,9 @@
-import React from 'react';
+import React from "react";
 
-
-export default function HomePage() {
-    return (
-        <h1>This is the home page.</h1>
-    );
+class Home extends React.Component {
+  render() {
+    return null;
+  }
 }
+
+export default Home;

@@ -1,7 +1,14 @@
 import React from "react";
-import { Route } from "react-router-dom";
-import LoginPage from "./login";
+import { Route, Switch } from "react-router-dom";
+import Home from "./home";
+import Frame from "../components/Frame";
+import Login from "./login";
 
 export default function Routes() {
-  return <Route exact path="/" component={LoginPage} />;
+  return (
+    <Switch>
+      <Route exact path="/" component={Frame} />;
+      <Route path="/login" component={Login} />;
+    </Switch>
+  );
 }
