@@ -1,7 +1,8 @@
-.frame {
+.landing-page {
   height: 100vh;
 }
-.frame .header-hrand {
+
+.landing-page .header-hrand {
   padding: 18px;
   font-size: 16px;
   height: 56px;
@@ -9,25 +10,25 @@
   white-space: nowrap;
   overflow: hidden;
 }
-.frame .header-hrand a {
+.landing-page .header-hrand a {
   color: #fff;
   text-decoration: none;
 }
-.frame .rs-sidebar {
+.landing-page .rs-sidebar {
   box-shadow: none;
 }
-.frame .rs-sidenav {
+.landing-page .rs-sidenav {
   flex: 1 1 auto;
   transition: none !important;
   border-top: 1px solid red;
   width: 100%;
 }
-.frame .rs-content {
+.landing-page .rs-content {
   padding: 20px;
 }
-.frame .nav-toggle {
+.landing-page .nav-toggle {
   border-top: 1px solid #eee;
 }
-.frame .nav-item-active {
+.landing-page .nav-item-active {
   color: white !important;
 }
