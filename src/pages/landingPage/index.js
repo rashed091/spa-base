@@ -12,43 +12,18 @@ import {
   Icon,
   DOMHelper,
 } from "rsuite";
+import HeaderAvatar from "../../components/Avatar";
 
 const { getHeight, on } = DOMHelper;
-
-const iconStyles = {
-  width: 56,
-  height: 56,
-  lineHeight: "56px",
-  textAlign: "center",
-};
 
 const NavToggle = ({ expand, onChange }) => {
   return (
     <Navbar appearance="subtle" className="nav-toggle">
-      <Navbar.Body>
-        <Nav>
-          <Dropdown
-            placement={expand ? "topStart" : "rightBottom"}
-            trigger="click"
-            renderTitle={(children) => {
-              return <Icon style={iconStyles} icon="cog" />;
-            }}
-          >
-            <Dropdown.Item>Help</Dropdown.Item>
-            <Dropdown.Item>Settings</Dropdown.Item>
-            <Dropdown.Item>Sign out</Dropdown.Item>
-          </Dropdown>
-        </Nav>
-
-        <Nav pullRight>
-          <Nav.Item
-            onClick={onChange}
-            style={{ width: 56, height: "100vh", textAlign: "center" }}
-          >
-            <Icon icon={expand ? "angle-left" : "angle-right"} />
-          </Nav.Item>
-        </Nav>
-      </Navbar.Body>
+      <Nav pullRight>
+        <Nav.Item onClick={onChange} style={{ width: 56, textAlign: "center" }}>
+          <Icon icon={expand ? "angle-left" : "angle-right"} />
+        </Nav.Item>
+      </Nav>
     </Navbar>
   );
 };
@@ -98,12 +73,12 @@ class LandingPage extends React.Component {
         >
           <Sidenav
             expanded={expand}
-            defaultOpenKeys={["3"]}
+            defaultOpenKeys={["1"]}
             appearance="subtle"
-            activeKey={[]}
+            activeKey={["1"]}
           >
             <Sidenav.Body style={navBodyStyle}>
-              <Nav>
+              <Nav justified>
                 <Nav.Item eventKey="1" active icon={<Icon icon="dashboard" />}>
                   Dashboard
                 </Nav.Item>
@@ -143,6 +118,7 @@ class LandingPage extends React.Component {
         </Sidebar>
 
         <Container className={containerClasses}>
+          <HeaderAvatar />
           <Header>
             <h2>Page Title</h2>
           </Header>

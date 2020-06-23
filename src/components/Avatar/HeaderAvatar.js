@@ -1,21 +1,16 @@
 //@flow
 
-import * as React from 'react';
-import { Dropdown, Popover, Whisper, Icon } from 'rsuite';
+import * as React from "react";
+import { Dropdown, Popover, Whisper, Icon, Divider } from "rsuite";
 
 const Menu = ({ onSelect }) => (
   <Dropdown.Menu onSelect={onSelect}>
-    <Dropdown.Item panel style={{ padding: 10, width: 160 }}>
+    <Dropdown.Item panel style={{ padding: 15, width: 160 }}>
       <p>Signed in as</p>
       <strong>Foobar</strong>
     </Dropdown.Item>
-    <Dropdown.Item divider />
-    <Dropdown.Item>Your profile</Dropdown.Item>
-    <Dropdown.Item>Your stars</Dropdown.Item>
-    <Dropdown.Item>Your Gists</Dropdown.Item>
-    <Dropdown.Item divider />
+    <Divider />
     <Dropdown.Item>Help</Dropdown.Item>
-    <Dropdown.Item>Settings</Dropdown.Item>
     <Dropdown.Item>Sign out</Dropdown.Item>
   </Dropdown.Menu>
 );
@@ -38,7 +33,7 @@ class HeaderAvatar extends React.Component {
     if (this.trigger) {
       this.trigger.hide();
     }
-  }
+  };
 
   render() {
     return (
@@ -46,7 +41,7 @@ class HeaderAvatar extends React.Component {
         <Whisper
           placement="bottomRight"
           trigger="click"
-          triggerRef={ref => {
+          triggerRef={(ref) => {
             this.trigger = ref;
           }}
           speaker={<MenuPopover onSelect={this.handleSelectMenu} />}
