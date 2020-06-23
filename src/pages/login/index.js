@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Container, Icon, Panel, IconButton } from "rsuite";
-import { Auth0Context } from "../../auth0/auth0-context"; // <-- new
+import { useAuth0 } from "../../auth0/auth0-hook"; // <-- new
 
 const Login = () => {
-  const auth0 = useContext(Auth0Context); // <-- new
+  const { loginWithRedirect } = useAuth0();
 
   return (
     <Container className="login-page">
@@ -12,7 +12,7 @@ const Login = () => {
           appearance="subtle"
           icon={<Icon className="fill-color" icon="home" size="lg" />}
           size="lg"
-          onClick={auth0.loginWithRedirect}
+          onClick={() => loginWithRedirect({})}
         >
           Login
         </IconButton>
