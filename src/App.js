@@ -1,18 +1,22 @@
-import * as React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { createBrowserHistory } from "history";
-import Routes from "./pages";
+import React from "react"; // <-- updated
+import Login from "./pages/login";
+// import { BrowserRouter as Router } from "react-router-dom";
+// import { createBrowserHistory } from "history";
+// import Routes from "./pages";
+// const history = createBrowserHistory();
+// class App extends React.PureComponent {
+//   render() {
+//     return (
+//       <Router history={history}>
+//         <Routes />
+//       </Router>
+//     );
+//   }
+// }
 
-const history = createBrowserHistory();
+function App() {
+  // const auth0 = useContext(Auth0Context); // <-- new
 
-class App extends React.PureComponent {
-  render() {
-    return (
-      <Router history={history}>
-        <Routes />
-      </Router>
-    );
-  }
+  return <Login />;
 }
-
 export default App;
