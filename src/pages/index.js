@@ -7,9 +7,9 @@ import LandingPage from "./landingPage";
 export default function Routes() {
   return (
     <Switch>
-      {/* <Route exact path="/" component={LandingPage} />; */}
+      <Route exact path="/" component={LandingPage} />;
       <Route path="/login" component={Login} />;
-      <PrivateRoute path="/" component={LandingPage} />
+      {/* <PrivateRoute path="/" component={LandingPage} /> */}
     </Switch>
   );
 }

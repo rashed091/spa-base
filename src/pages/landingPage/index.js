@@ -8,11 +8,10 @@ import {
   Nav,
   Sidenav,
   Navbar,
-  Dropdown,
   Icon,
   DOMHelper,
 } from "rsuite";
-import HeaderAvatar from "../../components/Avatar";
+import LanguageSwitch from "../../components/LanguageSwitch";
 
 const { getHeight, on } = DOMHelper;
 
@@ -32,7 +31,7 @@ class LandingPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expand: true,
+      expand: false,
       windowHeight: getHeight(window),
     };
     this.handleToggle = this.handleToggle.bind(this);
@@ -79,38 +78,30 @@ class LandingPage extends React.Component {
           >
             <Sidenav.Body style={navBodyStyle}>
               <Nav justified>
-                <Nav.Item eventKey="1" active icon={<Icon icon="dashboard" />}>
+                <Nav.Item eventKey="1" active icon={<Icon icon="trend" />}>
                   Dashboard
                 </Nav.Item>
-                <Nav.Item eventKey="2" icon={<Icon icon="group" />}>
-                  User Group
+                <Nav.Item eventKey="2" icon={<Icon icon="industry" />}>
+                  Inventory
                 </Nav.Item>
-                <Dropdown
-                  eventKey="3"
-                  trigger="hover"
-                  title="Advanced"
-                  icon={<Icon icon="magic" />}
-                  placement="rightStart"
-                >
-                  <Dropdown.Item eventKey="3-1">Geo</Dropdown.Item>
-                  <Dropdown.Item eventKey="3-2">Devices</Dropdown.Item>
-                  <Dropdown.Item eventKey="3-3">Brand</Dropdown.Item>
-                  <Dropdown.Item eventKey="3-4">Loyalty</Dropdown.Item>
-                  <Dropdown.Item eventKey="3-5">Visit Depth</Dropdown.Item>
-                </Dropdown>
-                <Dropdown
-                  eventKey="4"
-                  trigger="hover"
-                  title="Settings"
-                  icon={<Icon icon="gear-circle" />}
-                  placement="rightStart"
-                >
-                  <Dropdown.Item eventKey="4-1">Applications</Dropdown.Item>
-                  <Dropdown.Item eventKey="4-2">Websites</Dropdown.Item>
-                  <Dropdown.Item eventKey="4-3">Channels</Dropdown.Item>
-                  <Dropdown.Item eventKey="4-4">Tags</Dropdown.Item>
-                  <Dropdown.Item eventKey="4-5">Versions</Dropdown.Item>
-                </Dropdown>
+                <Nav.Item eventKey="3" icon={<Icon icon="sales" />}>
+                  Sales
+                </Nav.Item>
+                <Nav.Item eventKey="4" icon={<Icon icon="shopping-cart" />}>
+                  Purchases
+                </Nav.Item>
+                <Nav.Item eventKey="5" icon={<Icon icon="money" />}>
+                  Payrolls
+                </Nav.Item>
+                <Nav.Item eventKey="6" icon={<Icon icon="try" />}>
+                  Expense
+                </Nav.Item>
+                <Nav.Item eventKey="7" icon={<Icon icon="bank" />}>
+                  Banking
+                </Nav.Item>
+                <Nav.Item eventKey="7" icon={<Icon icon="file-text" />}>
+                  Invoice
+                </Nav.Item>
               </Nav>
             </Sidenav.Body>
           </Sidenav>
@@ -118,7 +109,7 @@ class LandingPage extends React.Component {
         </Sidebar>
 
         <Container className={containerClasses}>
-          <HeaderAvatar />
+          <LanguageSwitch />
           <Header>
             <h2>Page Title</h2>
           </Header>
